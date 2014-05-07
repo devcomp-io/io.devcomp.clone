@@ -1,0 +1,58 @@
+
+
+Setup
+=====
+
+**Launch your OWN instanceof devcomp.io!**
+
+Requirements:
+
+  * NodeJS `0.10+`
+  * **DEDICATED** [Amazon AWS Account](http://aws.amazon.com/)
+
+Locate workspaces:
+
+	mkdir ~/dev.workspaces
+	cd ~/dev.workspaces
+
+Credentials:
+
+	echo '
+	#!/bin/bash -e
+	# IAM credentials for AWS account
+	export AWS_USER_NAME="<Your Username>"
+	export AWS_ACCESS_KEY="<Your Access Key>"
+	export AWS_SECRET_KEY="<Your Secret Key>"
+	# pinf.io credentials
+	export PIO_EPOCH_ID="<Insert UUID>"
+	export PIO_SEED_SALT="<Insert UUID>"
+	export PIO_SEED_KEY="<Insert UUID>"
+	export PIO_USER_ID="<Insert UUID>"
+	export PIO_USER_SECRET="<Insert UUID>"
+	' > io.devcomp.activate.sh
+
+Clone:
+
+	git clone git@github.com:devcomp-io/devcomp.io.git io.devcomp
+	cd io.devcomp
+
+Install:
+
+	./install.sh
+
+Activate:
+
+    source bin/activate.sh
+
+Provision instance and deploy services:
+
+    pio deploy
+
+
+License
+=======
+
+Copyright 2014 Christoph Dorn
+
+License: MIT
+
